@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "copy cliperFirebase Auth ",
+  "description": "This sample shows how to authorize Firebase in a Chrome extension using a Google account.",
+  "version": "2.2",
+  "icons": {
+    "128": "firebase.png"
+  },
+  "browser_action": {
+    "default_icon": "firebase.png",
+    "default_popup": "credentials.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "identity"
+  ],
+  // Adding https://www.gstatic.com/ to the external scripts authorized domains so we can import the firebase JS SDK and access the Realtime Database as well as Firebase Storage.
+ "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+ "oauth2": {
+    // TODO(DEVELOPER): Change the line below to the OAuth Client ID you created as described in https://developer.chrome.com/apps/app_identity#google
+    "client_id": "84458212725-08a6q2oigbeiebrnl9rp0mh8icsfu4uk.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  // TODO(DEVELOPER): Change the line below to your Chrome Extension's public key as described in https://developer.chrome.com/apps/app_identity#google
+  // "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTe8zGS0ShDrIAoXdsPFtOXVHgX0fE54GPWXNg9emo7ae+qU6MywaJN6pwbhKXIbGyQ96MD15HHykDtqbsMxgheGOZ58Z7MXFL0t3AenaJHZnieLbnHAa8TIGVZ1pOw7YAc3Lc19goVMBq4d5M+CXCzwE2u7/X2R6hHBPlTuRAotiX+88E3CIvYEjHeOT2iod4mSVVpvw0hGkpI9a5NuHoKR+VJTQhef93JFTN3MTi+PbLts0EGe7zCVDTSMZfhTllrAjk2OmI7+WRtkPvoVXwCJPIqdK8Gw8yRysmf6wBzJUxmmExvn5GVBNT+nXXYUoO0GaWtYFQGa+9Eq2b3v3QIDAQAB"
+     // "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2xAA62wGnn/VCQ5q/HW/5dwFMWaYmt4osmGxlKTXe7pZEnAV1VbZaotSQ09o9HssNzuCmpTLmiHR1kVgI2FnAtjKOnDfG0iQ0EJVYuPNL03lVTjPE7jbsuEwHs9CQY36ztjlejlAi6BveiZ3jPRFWE/iWJD5+qQVp6rXdX54ZSe8Ffb6vApRQDT+L5w3dF0jXETAyNQKeswvdvX1N1r/gRFFdf7J49iI5PN2x41hOMJcfD+MwKN3bpqd5PYcb3vv1SWPPrUOg1iz6bxXWEX/CX03kDU8AB7VMa823bLEZpzfqYncuIR6s+Y1iseOoXuEg/4PVKynWsYnohdgnwLttQIDAQAB"
+}
+
